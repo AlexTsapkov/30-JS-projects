@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Key Detection</title>
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  </head>
+  <body>
+    <script>
+      const preset = [];
+      const secretCode = 'wesbos';
+      window.addEventListener('keyup', (e) => {
+        preset.push(e.key);
+        preset.splice(-secretCode - 1, preset.length - secretCode);
+        if(preset.join('').includes(secretCode)){
+          cornify_add();
+        }
+      });
+    </script>
+  </body>
+</html>
